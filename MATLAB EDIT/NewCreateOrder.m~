@@ -3,10 +3,7 @@ function output = NewCreateOrder(subjnum)
 %{
  Written on 28/02/2018
  Code which generates an order file in the same format as
- CreateOrder_AllShort.m but with a different method of defining the lag and
- population of the order. The lag between repeat and lure pairs have a mean
- and standard deviation, the order is populated one by one with the paired
- images, the foil images then fill the gaps
+ CreateOrder_AllShort.m but with some m
 %}
 
 % Code to tell you what type of image it is
@@ -35,7 +32,7 @@ lagsd = 20;
 
 ntrials = 2*(nreppairs + nlurepairs) + nfoils; 
 
-% creating order arrays and image orders
+% counters
 rng(subjnum);
 repeat_order = randperm(nreppairs); % for 2nd pres Repeats
 lure_order = randperm(nlurepairs); % for 2nd pres Lures
@@ -99,6 +96,8 @@ for i=1:nfoils
     order(foil_spaces(i)) = foil_order(i) + 400;
 end
 
-%% Output
+% 
+%%Output
 output(:,1) = order;
 output(:,2) = orderlag;
+assignin('base', 'output', output);

@@ -1,9 +1,7 @@
-function GenerateStimSets (subject)
+function Parm = GenerateStimSets (subject)
 %1-64 = Set1
 %65-128 = Set2
 %129-192 = Set3
-
-global Parm;
 
 Set1 = 1:64; Set1_Offset = 0;
 Set2 = 65:128; Set2_Offset = 64;

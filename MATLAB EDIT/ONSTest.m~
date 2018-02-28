@@ -10,15 +10,14 @@ function err = ONSTest(subjnum,dirname)
 %
 % will also compute lure stats at the end
 % JW 8/4/09
-%
-% Changed to use the NewCreateOrder.m script as well as the removal of
-% global parameters.
+
+global Parm;
 
 path('StarkLabPToolboxFuncs',path);  % Add subdir w/toolbox funcs to path
 
     
 % Generate the stim lists
-Parm = GenerateStimSets(subjnum);
+GenerateStimSets(subjnum);
 
 % Setup variables we'll use for timing
 duration = 2;
@@ -43,7 +42,6 @@ end
 fname = sprintf('s%d_log.txt',subjnum);
 fid = fopen(fname,'a');  % Open log file in append mode
 %Load Order file
-trial_order = NewCreateOrder(subjnum);
 % order_file = sprintf('order_%d.txt',subjnum);
 % trial_order = dlmread(order_file);
 
@@ -57,6 +55,8 @@ ntrials = length(trial_order);
 
 fprintf(fid,'%s\nTest phase (group: %d)\nSubj: %d\n',datestr(now),Parm.Group,subjnum);
 fprintf(fid,'Trialnum\tfilename\tcondition\tLureBin\tresponse\taccuracy\trt\n');
+
+%Order now comes from order_x.txt file, generated in LagGenerator
 
 
 % Setup screen in Psychtoolbox
