@@ -41,23 +41,23 @@ end
 % Setup log file
 fname = sprintf('s%d_log.txt',subjnum);
 fid = fopen(fname,'a');  % Open log file in append mode
+%Load Order file
+order_file = sprintf('order_%d.txt',subjnum);
+trial_order = dlmread(order_file);
 
-npercond = length(Parm.TargetList);
-ntrials = npercond * 3;
+%npercond = length(Parm.TargetList);
+ntrials = length(trial_order);
+% ntrials = npercond * 3;
+% if length(trial_order) ~= ntrials
+%     fprintf(1,'The Trial Length from the Order file differs from that set in Main, %d compared to %d', length(trial_order), ntrials);
+%     return;
+% end
 
 fprintf(fid,'%s\nTest phase (group: %d)\nSubj: %d\n',datestr(now),Parm.Group,subjnum);
 fprintf(fid,'Trialnum\tfilename\tcondition\tLureBin\tresponse\taccuracy\trt\n');
 
-% Create random orders
-%rand('seed',subjnum); Have replaced this line with new recommended syntax
-rng(subjnum);% Use subject number as the random 'seed'
-trial_order = mod(randperm(ntrials),3); % 0=old/target, 1=similar/lure, 2=new/foil
-target_order = randperm(npercond);
-foil_order = randperm(npercond);
-lure_order = randperm(npercond);
-target_index = 1;
-foil_index = 1;
-lure_index = 1;
+%Order now comes from order_x.txt file, generated in LagGenerator
+
 
 % Setup screen in Psychtoolbox
 screenNum=0;  % which screen to put things on
@@ -66,16 +66,12 @@ window = Screen(screenNum,'OpenWindow');  % Open the screen
 Screen('TextSize',window,36);
 KbName('UnifyKeyNames');
 
-% Pre-load the first image
-if (trial_order(1) == 0)
-    fname = sprintf('%s/%s',dirname,char(Parm.TargetList(target_order(target_index))));
-    target_index = target_index+1;
-elseif (trial_order(1) == 1)
-    fname = sprintf('%s/%s',dirname,char(Parm.LureList(lure_order(lure_index))));
-    lure_index = lure_index+1;
+if trial_order(1,1) < 101
+    fname = sprintf('%s/%sa.jpg',dirname,char(Parm.TargetList(trial_order(1,1))));
+elseif trial_order(1,1) < 401
+    fname = sprintf('%s/%sa.jpg',dirname,char(Parm.LureList(trial_order(1,1)-200)));
 else
-    fname = sprintf('%s/%s',dirname,char(Parm.FoilList(foil_order(foil_index))));
-    foil_index = foil_index+1;
+    fname = sprintf('%s/%sa.jpg',dirname,char(Parm.FoilList(trial_order(1,1)-400)));
 end
 img = imread(fname);
 
@@ -96,27 +92,29 @@ sumL1 = 0; sumL2 = 0; sumL3 = 0; sumL4 = 0; sumL5 = 0;
 % Trial loop
 t0 = GetSecs();  % time when the first trial started
 for trial=1:ntrials
-    fprintf(fid,'%d\t%s\t%d\t',trial,fname,trial_order(trial));
+    fprintf(fid,'%d\t%s\t%d\t',trial,fname,trial_order(trial,1));
     t_start = t0 + (trial - 1) * trial_duration;  % When trial should have started
     Screen(window,'FillRect',WhiteIndex(window)); % clear to black
     Screen(window,'PutImage',img);  % draw onto offscreen buffer
     Screen(window,'Flip');  % put offscreen buffer onto screen
     lurebin = 0;
-    if (trial_order(trial) == 1) % on a lure - figure the bin
+    if 300 < trial_order(trial,1) < 401 % showing of 2nd part of lure pair - figure the bin
         stimnum = sscanf(fname(7:9),'%3d');
         lurebin = normbin(stimnum,2);
     end
     fprintf(fid,'%d\t',lurebin); % write bin to logfile
-    if (trial ~= ntrials) % not on last trial, load the next while the current is on screen
-        if (trial_order(trial+1) == 0)
-            fname = sprintf('%s/%s',dirname,char(Parm.TargetList(target_order(target_index))));
-            target_index = target_index+1;
-        elseif (trial_order(trial+1) == 1)
-            fname = sprintf('%s/%s',dirname,char(Parm.LureList(lure_order(lure_index))));
-            lure_index = lure_index+1;
+   
+    if(trial ~= ntrials) % not on last trial, load the next while the current is on screen
+        if trial_order(trial+1,1) < 101
+            fname = sprintf('%s/%sa.jpg',dirname,char(Parm.TargetList(trial_order(trial+1,1))));
+        elseif trial_order(trial+1,1) < 201
+            fname = sprintf('%s/%sa.jpg',dirname,char(Parm.TargetList(trial_order(trial+1,1)-100)));
+        elseif trial_order(trial+1,1) < 301
+            fname = sprintf('%s/%sa.jpg',dirname,char(Parm.LureList(trial_order(trial+1,1)-200)));
+        elseif trial_order(trial+1,1) < 401
+            fname = sprintf('%s/%sb.jpg',dirname,char(Parm.LureList(trial_order(trial+1,1)-300)));
         else
-            fname = sprintf('%s/%s',dirname,char(Parm.FoilList(foil_order(foil_index))));
-            foil_index = foil_index+1;
+            fname = sprintf('%s/%sa.jpg',dirname,char(Parm.FoilList(trial_order(trial+1,1)-400)));
         end
         img = imread(fname);
     end
@@ -141,7 +139,7 @@ for trial=1:ntrials
 
 % Type is defined as TO, TN, TS, LO, LN, LS, FO, FN, FS
     %Accuracy
-    if trial_order(trial) == 0 % old target
+    if 100 < trial_order(trial,1) < 201 % old target
         sumtarget = sumtarget + 1;
         if resp == 1
             acc = 1; TO = TO + 1;
@@ -152,7 +150,7 @@ for trial=1:ntrials
         else
             acc = 0; NR = NR + 1;
         end
-    elseif trial_order(trial) == 1 % similar lure
+    elseif 300 < trial_order(trial,1) <401 % similar lure
         sumlure = sumlure + 1;
         if resp == 1
             acc = 0; LO = LO + 1;
@@ -163,7 +161,7 @@ for trial=1:ntrials
         else
             acc = 0; NR = NR + 1;
         end
-    elseif trial_order(trial) == 2 % new foil
+    else % new foil
         sumfoil = sumfoil + 1;
         if resp == 1
             acc = 0; FO = FO + 1;
