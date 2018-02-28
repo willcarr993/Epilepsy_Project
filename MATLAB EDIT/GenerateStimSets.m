@@ -38,7 +38,7 @@ if ((group == 3) || (group == 4)) % Group3: S=1,3  % Group4: S=1,3
         Parm.StudyList(i - Set1_Offset) = cellstr(sprintf('%.3d',i));
     end
     for (i=Set3)
-        Parm.StudyList(i - Set3_Offset + NPerList) = cellstParmr(sprintf('%.3d',i));
+        Parm.StudyList(i - Set3_Offset + NPerList) = cellstr(sprintf('%.3d',i));
     end
 end
 if ((group == 5) || (group == 6)) % Group5: S=2,3  % Group6: S=2,3

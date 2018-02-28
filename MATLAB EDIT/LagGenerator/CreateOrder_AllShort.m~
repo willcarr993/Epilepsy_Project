@@ -68,7 +68,6 @@ Offset_Foil = 400; % 401+ Foil
 nlurepairs = 32;
 nreppairs = nlurepairs;
 nfoils = 64; % May fail some times with this # but works most of the time...
-nlag0 = 8; %number of 0-lags for Rs and Ls
 min_lag = 2; % For non-zero, what's the min gap?
 max_lag = 12; % For non-zero, what's the max gap?
 

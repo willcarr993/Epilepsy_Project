@@ -98,7 +98,7 @@ for trial=1:ntrials
     Screen(window,'PutImage',img);  % draw onto offscreen buffer
     Screen(window,'Flip');  % put offscreen buffer onto screen
     lurebin = 0;
-    if 300 < trial_order(trial,1) < 401 % showing of 2nd part of lure pair - figure the bin
+    if trial_order(trial,1) > 300 && trial_order(trial,1) < 401 % showing of 2nd part of lure pair - figure the bin
         stimnum = sscanf(fname(7:9),'%3d');
         lurebin = normbin(stimnum,2);
     end
@@ -139,7 +139,7 @@ for trial=1:ntrials
 
 % Type is defined as TO, TN, TS, LO, LN, LS, FO, FN, FS
     %Accuracy
-    if 100 < trial_order(trial,1) < 201 % old target
+    if trial_order(trial,1) > 100 && trial_order(trial,1) < 201 % old target
         sumtarget = sumtarget + 1;
         if resp == 1
             acc = 1; TO = TO + 1;
@@ -150,7 +150,7 @@ for trial=1:ntrials
         else
             acc = 0; NR = NR + 1;
         end
-    elseif 300 < trial_order(trial,1) <401 % similar lure
+    elseif trial_order(trial,1) > 300 && trial_order(trial,1) <401 % similar lure
         sumlure = sumlure + 1;
         if resp == 1
             acc = 0; LO = LO + 1;
