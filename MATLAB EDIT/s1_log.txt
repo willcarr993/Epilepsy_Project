@@ -1,116 +1,56 @@
-28-Feb-2018 15:31:18
+28-Feb-2018 16:10:43
 Test phase (group: 1)
 Subj: 1
 Trialnum	filename	condition	LureBin	response	accuracy	rt
-1	Set C/163a.jpg	435	0	2	1	1470.7
-2	Set C/065a.jpg	201	0	2	1	1536.8
-3	Set C/015a.jpg	15	0	2	1	1154.7
-4	Set C/085a.jpg	221	0	2	1	1180.3
-5	Set C/021a.jpg	21	0	2	1	1180.0
-6	Set C/171a.jpg	443	0	2	1	1069.6
-7	Set C/085b.jpg	321	2	0	0	0.0
-8	Set C/185a.jpg	457	0	2	1	1297.0
-9	Set C/186a.jpg	458	0	2	1	915.4
-10	Set C/187a.jpg	459	0	2	1	1576.5
-11	Set C/081a.jpg	217	0	2	1	732.9
-12	Set C/068a.jpg	204	0	2	1	734.0
-13	Set C/129a.jpg	401	0	2	1	590.3
-14	Set C/012a.jpg	12	0	2	1	626.4
-15	Set C/026a.jpg	26	0	2	1	592.6
-16	Set C/179a.jpg	451	0	2	1	979.7
-17	Set C/155a.jpg	427	0	2	1	774.5
-18	Set C/026a.jpg	126	0	1	1	1169.1
-19	Set C/024a.jpg	24	0	2	1	825.3
-20	Set C/184a.jpg	456	0	2	1	1630.2
-21	Set C/176a.jpg	448	0	2	1	1252.5
-22	Set C/027a.jpg	27	0	2	1	1089.5
-23	Set C/136a.jpg	408	0	2	1	742.8
-24	Set C/137a.jpg	409	0	2	1	706.9
-25	Set C/140a.jpg	412	0	2	1	944.0
-26	Set C/175a.jpg	447	0	2	1	1175.1
-27	Set C/025a.jpg	25	0	2	1	736.0
-28	Set C/095a.jpg	231	0	2	1	902.1
-29	Set C/160a.jpg	432	0	2	1	676.5
-30	Set C/188a.jpg	460	0	2	1	817.3
-31	Set C/068b.jpg	304	1	2	0	1146.6
-32	Set C/149a.jpg	421	0	2	1	939.4
-33	Set C/077a.jpg	213	0	2	1	1077.6
-34	Set C/025a.jpg	125	0	1	1	1181.7
-35	Set C/083a.jpg	219	0	2	1	818.7
-36	Set C/012a.jpg	112	0	1	1	1540.0
-37	Set C/015a.jpg	115	0	1	1	1442.7
-38	Set C/165a.jpg	437	0	2	1	1415.6
-39	Set C/142a.jpg	414	0	2	1	1445.2
-40	Set C/024a.jpg	124	0	1	1	1346.6
-41	Set C/075a.jpg	211	0	2	1	1323.2
-42	Set C/065b.jpg	301	5	3	1	1525.2
-43	Set C/148a.jpg	420	0	2	1	1442.9
-44	Set C/022a.jpg	22	0	2	1	1450.8
-45	Set C/094a.jpg	230	0	2	1	1618.1
-46	Set C/070a.jpg	206	0	2	1	1628.6
-47	Set C/168a.jpg	440	0	3	0	1753.1
-48	Set C/079a.jpg	215	0	2	1	1381.7
-49	Set C/094b.jpg	330	3	3	1	1321.1
-50	Set C/003a.jpg	3	0	2	1	1090.3
-51	Set C/081b.jpg	317	1	3	1	1687.0
-52	Set C/139a.jpg	411	0	2	1	1213.1
-53	Set C/072a.jpg	208	0	2	1	1285.9
-54	Set C/069a.jpg	205	0	2	1	1055.5
-55	Set C/028a.jpg	28	0	2	1	1121.4
-56	Set C/027a.jpg	127	0	1	1	1102.3
-57	Set C/087a.jpg	223	0	2	1	938.5
-58	Set C/159a.jpg	431	0	2	1	1235.2
-59	Set C/021a.jpg	121	0	1	1	1299.2
-60	Set C/151a.jpg	423	0	2	1	1403.8
-61	Set C/086a.jpg	222	0	2	1	1012.2
-62	Set C/079b.jpg	315	4	0	0	0.0
-63	Set C/157a.jpg	429	0	0	0	0.0
-64	Set C/132a.jpg	404	0	0	0	746.6
+1	Set C/163a.jpg	435	0	3	0	389.7
+2	Set C/065a.jpg	201	0	2	1	477.1
+3	Set C/015a.jpg	15	0	0	0	291.9
+4	Set C/085a.jpg	221	0	0	0	669.5
 
 Session Statistics
 TO	TN	TS	LO	LN	LS	FO	FN	FS	NR
-7	0	0	0	1	3	0	48	1	4
+0	0	0	0	0	0	0	1	1	2
 
-Total target trials	7
-Rate(old | target)	1.0000
-Rate(new | target)	0.0000
-Rate(similar | target)	0.0000
+Total target trials	0
+Rate(old | target)	NaN
+Rate(new | target)	NaN
+Rate(similar | target)	NaN
 
-Total lure trials	6
-Rate(old | lure)	0.0000
-Rate(new | lure)	0.1667
-Rate(similar | lure)	0.5000
+Total lure trials	0
+Rate(old | lure)	NaN
+Rate(new | lure)	NaN
+Rate(similar | lure)	NaN
 
-Total foil trials	51
+Total foil trials	4
 Rate(old | foil)	0.0000
-Rate(new | foil)	0.9412
-Rate(similar | foil)	0.0196
+Rate(new | foil)	0.2500
+Rate(similar | foil)	0.2500
 
 LureBin Statistics
 L1O	L1S	L1N	L2O	L2S	L2N	L3O	L3S	L3N	L4O	L4S	L4N	L5O	L5S	L5N	LNR
-0	1	1	0	0	0	0	1	0	0	0	0	0	1	0	2
+0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
 
-Total LureBin one trials	2
-Rate(old | lure1)	0.0000
-Rate(new | lure1)	0.5000
-Rate(similar | lure1)	0.5000
+Total LureBin one trials	0
+Rate(old | lure1)	NaN
+Rate(new | lure1)	NaN
+Rate(similar | lure1)	NaN
 
-Total LureBin two trials	1
-Rate(old | lure2)	0.0000
-Rate(new | lure2)	0.0000
-Rate(similar | lure2)	0.0000
+Total LureBin two trials	0
+Rate(old | lure2)	NaN
+Rate(new | lure2)	NaN
+Rate(similar | lure2)	NaN
 
-Total LureBin three trials	1
-Rate(old | lure3)	0.0000
-Rate(new | lure3)	0.0000
-Rate(similar | lure3)	1.0000
+Total LureBin three trials	0
+Rate(old | lure3)	NaN
+Rate(new | lure3)	NaN
+Rate(similar | lure3)	NaN
 
-Total LureBin four trials	1
-Rate(old | lure4)	0.0000
-Rate(new | lure4)	0.0000
-Rate(similar | lure4)	0.0000
+Total LureBin four trials	0
+Rate(old | lure4)	NaN
+Rate(new | lure4)	NaN
+Rate(similar | lure4)	NaN
 
-Total LureBin five trials	1
-Rate(old | lure5)	0.0000
-Rate(new | lure5)	0.0000
-Rate(similar | lure5)	1.0000
+Total LureBin five trials	0
+Rate(old | lure5)	NaN
+Rate(new | lure5)	NaN
+Rate(similar | lure5)	NaN

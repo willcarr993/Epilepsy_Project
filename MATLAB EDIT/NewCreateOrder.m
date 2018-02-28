@@ -7,29 +7,40 @@ function output = NewCreateOrder(subjnum)
  population of the order. The lag between repeat and lure pairs have a mean
  and standard deviation, the order is populated one by one with the paired
  images, the foil images then fill the gaps
-%}
 
-% Code to tell you what type of image it is
-% Offset_1R = 0; % 1-100 1st of repeat pair
-% Offset_2R = 100; % 101-200  2nd of repeat pair
-% Offset_1L = 200; % 201-300 1st of lure pair
-% Offset_2L = 300; % 301-400 2nd of lure pair
-% Offset_Foil = 400; % 401+ Foil
+The format of the output of this function is in keeping with the original
+format which is:
+
+1st column of output:
+The image number (which corresponds to an image in Set C/Set D etc) with an
+added shifting which represents the image type:
++0 : 1st of a repeat pair
++100 : 2nd of a repeat pair
++200 : 1st of a lure pair
++300 : 2nd of a lure pair
++400 : foil image
+
+2nd column:
+if == -1 : is either a foil or 1st presentation of repeat/lure pair
+if > 500 : is a 2nd presentation of a repeat/lure pair, the value shown is
+the lag + 500.
+
+%}
 
 nlurepairs = 32;
 nreppairs = nlurepairs;
-nfoils = 64; % May fail some times with this # but works most of the time...
-min_lag = 0; % For non-zero, what's the min gap?
-max_lag = 60; % For non-zero, what's the max gap?
+nfoils = 64; 
+min_lag = 0; % uses a random number generator, need to set min and max values
+max_lag = 60;
 lagmean = 30;
 lagsd = 20;
 
 % For Testing
 % nlurepairs = 32;
 % nreppairs = nlurepairs;
-% nfoils = 64; % May fail some times with this # but works most of the time...
-% min_lag = 0; % For non-zero, what's the min gap?
-% max_lag = 60; % For non-zero, what's the max gap?
+% nfoils = 64;
+% min_lag = 0; 
+% max_lag = 60; 
 % lagmean = 30;
 % lagsd = 20;
 
@@ -37,13 +48,13 @@ ntrials = 2*(nreppairs + nlurepairs) + nfoils;
 
 % creating order arrays and image orders
 rng(subjnum);
-repeat_order = randperm(nreppairs); % for 2nd pres Repeats
-lure_order = randperm(nlurepairs); % for 2nd pres Lures
-foil_order = randperm(nfoils); %
-order = zeros(ntrials,1);  % actual array of trial order / types -- start at 0 -- see above for codes
-orderlag = zeros(ntrials,1); % array of lags (-1s for 1sts and foils; lags for 2nd presentations).
+repeat_order = randperm(nreppairs);
+lure_order = randperm(nlurepairs);
+foil_order = randperm(nfoils);
+order = zeros(ntrials,1);  % when eventually populated, forms 1st column of output
+orderlag = zeros(ntrials,1); % when eventually populated, forms 2nd column of output
 orderlag = orderlag - 1;
-spaces_list = 1:ntrials;
+spaces_list = 1:ntrials; % is used to know the places in the order which have already been taken up by images
 output = zeros(ntrials,2);
 
 
@@ -52,6 +63,8 @@ for i=1:nreppairs
     %Insert repeat pair
     replag = 0;
     repposi = 0;
+    % this while loop sees if the potential position for the 1st and 2nd
+    % presentation of an image pair are available
     while ~ismember(repposi,spaces_list) || ~ismember(repposi+replag+1,spaces_list)
         replag = round(normrnd(lagmean,lagsd));
         if replag < min_lag
@@ -61,6 +74,8 @@ for i=1:nreppairs
         end
         repposi = randi([1 (ntrials-(replag+1))]);
     end
+    % Once you know the positions are available, populate and remove those
+    % positions from spaces_list
     order(repposi) = repeat_order(i);
     order(repposi+replag+1) = repeat_order(i)+100;
     orderlag(repposi+replag+1) = replag+500;

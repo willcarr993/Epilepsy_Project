@@ -1,4 +1,4 @@
-function err = ONSTest(subjnum,dirname)
+function ContTest(subjnum,dirname)
 % This is the test file with old, similar and new judgments.
 % CS 4/7/08
 %
@@ -41,7 +41,13 @@ end
 
 % Setup log file
 fname = sprintf('s%d_log.txt',subjnum);
-fid = fopen(fname,'a');  % Open log file in append mode
+if exist(fname, 'file')
+    fprintf('The log file already exists, either delete this file or choose a different subject number');
+    return
+else
+    fid = fopen(fname,'a');  % Open log file in append mode
+end
+
 %Load Order file
 trial_order = NewCreateOrder(subjnum);
 % order_file = sprintf('order_%d.txt',subjnum);
