@@ -1,4 +1,4 @@
-function ContTest(subjnum,dirname)
+function ContTestScanner(subjnum,dirname)
 % This is the test file with old, similar and new judgments.
 % CS 4/7/08
 %
@@ -51,15 +51,22 @@ end
 %Generate Order file
 trial_order = NewCreateOrder(subjnum);
 
+
 npercond = length(Parm.TargetList);
 ntrials = npercond * 3;
-if length(trial_order) ~= ntrials
-    fprintf(1,'The Trial Length from the Order file differs from that set in Main, %d compared to %d', length(trial_order), ntrials);
-    return;
-end
+% if length(trial_order) ~= ntrials
+%     fprintf(1,'The Trial Length from the Order file differs from that set in Main, %d compared to %d', length(trial_order), ntrials);
+%     return;
+% end
 
 fprintf(fid,'%s\nTest phase (group: %d)\nSubj: %d\n',datestr(now),Parm.Group,subjnum);
 fprintf(fid,'Trialnum\tfilename\tcondition\tLureBin\tresponse\taccuracy\trt\n');
+
+% Setup Cedrus Box
+WaitSecs(1.02) ;
+handle =  CedrusResponseBox('Open', 'COM3');
+CedrusResponseBox('FlushEvents', handle)
+evt = CedrusResponseBox('GetButtons', handle);
 
 % Setup screen in Psychtoolbox
 screenNum=0;  % which screen to put things on
@@ -81,7 +88,19 @@ img = imread(fname);
 Screen(window,'FillRect',WhiteIndex(window)); % clear to black
 DrawFormattedText(window,'Press (v) for old, (b) for similar and (n) for new.\n\nPress spacebar when you are ready to begin.','center','center',BlackIndex(window));
 Screen(window,'Flip');  % put offscreen buffer onto screen
-KbWait;
+% KbWait;
+waitforbuttonpress = 0;
+
+while ~waitforbuttonpress
+    evt = CedrusResponseBox('GetButtons', handle);
+    if ~isempty(evt) && ((evt.button == 2) || (evt.button == 3) ||  (evt.button == 4) || (evt.button == 5)  );
+        waitforbuttonpress = 1;
+        ScannerOn = GetSecs;
+        Screen('Flip',w);
+    end
+    waitsecs(0.1);
+end
+        
 
 % Zero all counters for trial types
 TO = 0; TN = 0; TS = 0; LO = 0; LN = 0; LS = 0; FO = 0; FN = 0; FS = 0; NR = 0;
@@ -93,6 +112,7 @@ sumL1 = 0; sumL2 = 0; sumL3 = 0; sumL4 = 0; sumL5 = 0;
 
 % Trial loop
 t0 = GetSecs();  % time when the first trial started
+currenttime = t0;
 for trial=1:ntrials
     fprintf(fid,'%d\t%s\t%d\t',trial,fname,trial_order(trial,1));
     t_start = t0 + (trial - 1) * trial_duration;  % When trial should have started
@@ -123,21 +143,41 @@ for trial=1:ntrials
 
     Screen(window,'FillRect',WhiteIndex(window));  % Clear OSB to white in prep for ISI
 
-    [keycode RT] = KbWaitUntil(t_start,duration);  % Wait until keypress or timeout
-    if keycode
-        keyname = KbName(keycode);
-    else
-        keyname = 'NR';
+    WaitUntil(t_start + 0.1);
+    %Included 
+    CedrusResponseBox('FlushEvents', handle)
+    evt = CedrusResponseBox('GetButtons', handle);
+    
+    while ~evt.action && currenttime < (t_start + duration)
+        waitsecs(0.05);   
+        evt = CedrusResponseBox('GetButtons', handle);
+        currenttime = GetSecs;
+        [~,~,keyname] = PsychHID('KbCheck');
+        if strcmp(keyname,'ESCAPE')
+            break;
+        end
     end
-    if (strcmp(keyname,'v'))  % Designation as old
-        resp = 1;
-    elseif (strcmp(keyname,'n')) % Designation as new
-        resp = 2;
-    elseif (strcmp(keyname, 'b')) % Designation as similar
-        resp = 3;
+    
+    
+%%%%!!!!!!!! WILL LIKELY NEED TO CHANGE TO ADAPT TO BOX SETTINGS!!!!
+    if evt.action
+        resp = evt.button;
+        RT = evt.rawrime + 0.1;
     else
-        resp = 0; % no response
+        resp = 'NR';
+        RT = 0;
     end
+
+    
+%     if (strcmp(keyname,'v'))  % Designation as old
+%         resp = 1;
+%     elseif (strcmp(keyname,'n')) % Designation as new
+%         resp = 2;
+%     elseif (strcmp(keyname, 'b')) % Designation as similar
+%         resp = 3;
+%     else
+%         resp = 0; % no response
+%     end
 
 % Type is defined as TO, TN, TS, LO, LN, LS, FO, FN, FS
     %Accuracy
@@ -236,12 +276,17 @@ for trial=1:ntrials
     end
     
     fprintf(fid,'%d\t%d\t%.1f\n',resp,acc,RT*1000);
-    %    if (keyname == escape) break; end % ESC hit
-    if (strcmp(keyname,'ESCAPE')) break; end % ESC hit
-    if (RT) WaitUntil(t_start + duration); end % If response made, wait until end of trial.  (on timeout, already there)
+    if (strcmp(keyname,'ESCAPE'))
+        break;
+    end % ESC hit
+    if (RT)
+        WaitUntil(t_start + duration);
+    end % If response made, wait until end of trial.  (on timeout, already there)
     Screen(window,'Flip');  % Clear screen (from already whiteened OSB)
     WaitUntil (t_start + trial_duration); 
 end
+
+CedrusResponseBox('Close', handle);
 
 fprintf(fid,'\nSession Statistics\n');
 fprintf(fid,'TO\tTN\tTS\tLO\tLN\tLS\tFO\tFN\tFS\tNR\n');
