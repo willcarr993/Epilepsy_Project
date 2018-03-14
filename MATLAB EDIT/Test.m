@@ -1,3 +1,7 @@
-i.first = 1;
-i.second = 2;
-i = 0;
+for i = 1:2
+    WaitSecs(0.1);
+    [keyisdown,~,keyname] = KbCheck();
+    fprintf('%d \n', keyisdown)
+    keyname
+end
+

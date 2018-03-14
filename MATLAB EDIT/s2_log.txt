@@ -1,44 +1,48 @@
-28-Feb-2018 16:10:43
-Test phase (group: 1)
-Subj: 1
+14-Mar-2018 16:13:25
+Test phase (group: 2)
+Subj: 2
 Trialnum	filename	condition	LureBin	response	accuracy	rt
-1	Set C/163a.jpg	435	0	3	0	389.7
-2	Set C/065a.jpg	201	0	2	1	477.1
-3	Set C/015a.jpg	15	0	0	0	291.9
-4	Set C/085a.jpg	221	0	0	0	669.5
+1	Set C/010a.jpg	210	0	2	1	1930.6
+2	Set C/191a.jpg	463	0	2	1	2321.4
+3	Set C/142a.jpg	414	0	2	1	1472.1
+4	Set C/031a.jpg	231	0	2	1	2541.8
+5	Set C/092a.jpg	28	0	2	1	2412.5
+6	Set C/089a.jpg	25	0	2	1	2351.9
+7	Set C/067a.jpg	3	0	2	1	633.3
+8	Set C/010b.jpg	310	2	0	0	677.8
 
 Session Statistics
 TO	TN	TS	LO	LN	LS	FO	FN	FS	NR
-0	0	0	0	0	0	0	1	1	2
+0	0	0	0	0	0	0	7	0	1
 
 Total target trials	0
 Rate(old | target)	NaN
 Rate(new | target)	NaN
 Rate(similar | target)	NaN
 
-Total lure trials	0
-Rate(old | lure)	NaN
-Rate(new | lure)	NaN
-Rate(similar | lure)	NaN
+Total lure trials	1
+Rate(old | lure)	0.0000
+Rate(new | lure)	0.0000
+Rate(similar | lure)	0.0000
 
-Total foil trials	4
+Total foil trials	7
 Rate(old | foil)	0.0000
-Rate(new | foil)	0.2500
-Rate(similar | foil)	0.2500
+Rate(new | foil)	1.0000
+Rate(similar | foil)	0.0000
 
 LureBin Statistics
 L1O	L1S	L1N	L2O	L2S	L2N	L3O	L3S	L3N	L4O	L4S	L4N	L5O	L5S	L5N	LNR
-0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
+0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	1
 
 Total LureBin one trials	0
 Rate(old | lure1)	NaN
 Rate(new | lure1)	NaN
 Rate(similar | lure1)	NaN
 
-Total LureBin two trials	0
-Rate(old | lure2)	NaN
-Rate(new | lure2)	NaN
-Rate(similar | lure2)	NaN
+Total LureBin two trials	1
+Rate(old | lure2)	0.0000
+Rate(new | lure2)	0.0000
+Rate(similar | lure2)	0.0000
 
 Total LureBin three trials	0
 Rate(old | lure3)	NaN

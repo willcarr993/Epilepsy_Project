@@ -1,4 +1,4 @@
-function ContTest(subjnum,dirname)
+function ContTestLongResp(subjnum,dirname)
 % 28/02/18 WJC - New Matlab continous version with new method for generating order
 
 path('StarkLabPToolboxFuncs',path);  % Add subdir w/toolbox funcs to path
@@ -9,10 +9,11 @@ Parm = GenerateStimSets(subjnum);
 
 % Setup variables we'll use for timing
 duration = 2;
-ISI = 0.5;
+ISI = 1;
+Blank = 0.5;
 %duration = 0.1;
 %ISI = 0.1;
-trial_duration = duration + ISI;
+trial_duration = duration + ISI + Blank;
 if (nargin < 2)
     dirname = 'Set C';
 end
@@ -111,11 +112,34 @@ for trial=1:ntrials
     Screen(window,'FillRect',WhiteIndex(window));  % Clear OSB to white in prep for ISI
 
     [keycode, RT] = KbWaitUntil(t_start,duration);  % Wait until keypress or timeout
+    
+    if keycode
+        WaitUntil(t_start + duration);
+    end % If response made, wait until end of trial.  (on timeout, already there)
+    
+    Screen(window,'Flip');  % Clear screen (from already whiteened OSB)
+    Screen(window,'FillRect',BlackIndex(window));
+    
+    if ~keycode
+        [keycode, RT] = KbWaitUntil(t_start+duration,ISI);  % Wait until keypress or timeout
+        if keycode
+            RT = RT + 2;
+        end
+    end
+    
+    if keycode
+        WaitUntil(t_start + duration + ISI);
+    end
+    
+    Screen(window,'Flip');
+    
     if keycode
         keyname = KbName(keycode);
     else
         keyname = 'NR';
     end
+    
+    
     if (strcmp(keyname,'v'))  % Designation as old
         resp = 1;
     elseif (strcmp(keyname,'n')) % Designation as new
@@ -224,10 +248,10 @@ for trial=1:ntrials
     
     fprintf(fid,'%d\t%d\t%.1f\n',resp,acc,RT*1000);
     %    if (keyname == escape) break; end % ESC hit
-    if (strcmp(keyname,'ESCAPE')) break; end % ESC hit
-    if (RT) WaitUntil(t_start + duration); end % If response made, wait until end of trial.  (on timeout, already there)
-    Screen(window,'Flip');  % Clear screen (from already whiteened OSB)
-    WaitUntil (t_start + trial_duration); 
+    if (strcmp(keyname,'ESCAPE'))
+        break;
+    end % ESC hit
+    WaitUntil (t_start + trial_duration);
 end
 
 fprintf(fid,'\nSession Statistics\n');

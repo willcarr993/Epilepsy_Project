@@ -1,7 +1,7 @@
 function output = NewCreateOrder(subjnum)
 
 %{
- Written on 28/02/2018
+ Written on 28/02/2018 WJC
  Code which generates an order file in the same format as
  CreateOrder_AllShort.m but with a different method of defining the lag and
  population of the order. The lag between repeat and lure pairs have a mean
@@ -31,7 +31,7 @@ nlurepairs = 32;
 nreppairs = nlurepairs;
 nfoils = 64; 
 min_lag = 0; % uses a random number generator, need to set min and max values
-max_lag = 60;
+max_lag = 80;
 lagmean = 30;
 lagsd = 20;
 
@@ -83,7 +83,7 @@ for i=1:nreppairs
     spaces_list(spaces_list==repposi) = [];
     spaces_list(spaces_list==(repposi+replag+1)) = [];
         
-    %Insert foil pair
+    %Insert lure pair
     lurelag = 0;
     lureposi = 0;
     while ~ismember(lureposi,spaces_list) || ~ismember(lureposi+lurelag+1,spaces_list)

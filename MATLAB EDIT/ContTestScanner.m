@@ -1,18 +1,6 @@
 function ContTestScanner(subjnum,dirname)
-% This is the test file with old, similar and new judgments.
-% CS 4/7/08
-%
-% minor changes, designed for Objs Set C 
-% JW 6/19/09
-%
-% will now find the lure bins and write it to the log file
-% CS 7/27/09
-%
-% will also compute lure stats at the end
-% JW 8/4/09
-%
-% Changed to use the NewCreateOrder.m script as well as the removal of
-% global parameters.
+% 28/02/18 WJC - ContTest.m adjusted to be compatible with the CRIC scanner
+%               Cedrus Box. Whether these changes are functional is not yet known
 
 path('StarkLabPToolboxFuncs',path);  % Add subdir w/toolbox funcs to path
 
@@ -91,9 +79,8 @@ waitforbuttonpress = 0;
 
 while ~waitforbuttonpress
     evt = CedrusResponseBox('GetButtons', handle);
-    if ~isempty(evt) && ((evt.button == 2) || (evt.button == 3) ||  (evt.button == 4) || (evt.button == 5)  );
+    if ~isempty(evt) && ((evt.button == 2) || (evt.button == 3) ||  (evt.button == 4) || (evt.button == 5)  )
         waitforbuttonpress = 1;
-        ScannerOn = GetSecs;
         Screen('Flip',w);
     end
     waitsecs(0.1);
@@ -149,10 +136,11 @@ for trial=1:ntrials
     evt = CedrusResponseBox('GetButtons', handle);
     
     while ~evt.action && currenttime < (t_start + duration)
-        waitsecs(0.05);   
+        waitsecs(0.01);   
         evt = CedrusResponseBox('GetButtons', handle);
         currenttime = GetSecs;
-        [~,~,keyname] = PsychHID('KbCheck');
+%         [~,~,keyname] = PsychHID('KbCheck');
+        [~,~,keyname] = KbCheck();
         if strcmp(keyname,'ESCAPE')
             break;
         end
@@ -162,7 +150,8 @@ for trial=1:ntrials
 %%%%!!!!!!!! WILL LIKELY NEED TO CHANGE TO ADAPT TO BOX SETTINGS!!!!
     if evt.action
         resp = evt.button;
-        RT = evt.rawrime + 0.1;
+%         RT = evt.rawtime + 0.1;
+        RT = evt.ptbtime - t_start;
     else
         resp = 'NR';
         RT = 0;

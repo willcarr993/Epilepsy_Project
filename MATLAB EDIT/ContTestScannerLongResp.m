@@ -1,18 +1,6 @@
-function ContTestScanner(subjnum,dirname)
-% This is the test file with old, similar and new judgments.
-% CS 4/7/08
-%
-% minor changes, designed for Objs Set C 
-% JW 6/19/09
-%
-% will now find the lure bins and write it to the log file
-% CS 7/27/09
-%
-% will also compute lure stats at the end
-% JW 8/4/09
-%
-% Changed to use the NewCreateOrder.m script as well as the removal of
-% global parameters.
+function ContTestScannerLongResp(subjnum,dirname)
+% 28/02/18 WJC - ContTest.m adjusted to be compatible with the CRIC scanner
+%               Cedrus Box. Whether these changes are functional is not yet known
 
 path('StarkLabPToolboxFuncs',path);  % Add subdir w/toolbox funcs to path
 
@@ -22,10 +10,9 @@ Parm = GenerateStimSets(subjnum);
 
 % Setup variables we'll use for timing
 duration = 2;
-ISI = 0.5;
-%duration = 0.1;
-%ISI = 0.1;
-trial_duration = duration + ISI;
+ISI = 1;
+Blanck = 0.5;
+trial_duration = duration + ISI + Blanck;
 if (nargin < 2)
     dirname = 'Set C';
 end
@@ -93,9 +80,8 @@ waitforbuttonpress = 0;
 
 while ~waitforbuttonpress
     evt = CedrusResponseBox('GetButtons', handle);
-    if ~isempty(evt) && ((evt.button == 2) || (evt.button == 3) ||  (evt.button == 4) || (evt.button == 5)  );
+    if ~isempty(evt) && ((evt.button == 2) || (evt.button == 3) ||  (evt.button == 4) || (evt.button == 5)  )
         waitforbuttonpress = 1;
-        ScannerOn = GetSecs;
         Screen('Flip',w);
     end
     waitsecs(0.1);
@@ -144,16 +130,21 @@ for trial=1:ntrials
     Screen(window,'FillRect',WhiteIndex(window));  % Clear OSB to white in prep for ISI
 
     WaitUntil(t_start + 0.1);
-    %Included 
+    %Included this 0.1 second wait as human reaction times to visual
+    %stimuli tend to be ~0.17s, hence any response in times less than 0.1s
+    %from trail start should be ignored.
     CedrusResponseBox('FlushEvents', handle)
     evt = CedrusResponseBox('GetButtons', handle);
+    WaitUntil(tstart + duration);
+    Screen(window,'Flip');
+    Screen(window,'FillRect',BlackIndex(window));
+    WaitUntil(tstart + duration + ISI);
+    Screen(window,'Flip');
     
-    while ~evt.action && currenttime < (t_start + duration)
-        waitsecs(0.05);   
+    while ~evt.action 
         evt = CedrusResponseBox('GetButtons', handle);
-        currenttime = GetSecs;
-        [~,~,keyname] = PsychHID('KbCheck');
-        if strcmp(keyname,'ESCAPE')
+        [~,~,keyname] = KbCheck();
+        if keyname(10) == 1
             break;
         end
     end
@@ -162,12 +153,12 @@ for trial=1:ntrials
 %%%%!!!!!!!! WILL LIKELY NEED TO CHANGE TO ADAPT TO BOX SETTINGS!!!!
     if evt.action
         resp = evt.button;
-        RT = evt.rawrime + 0.1;
+%         RT = evt.rawtime + 0.1;
+        RT = evt.ptbtime - t_start;
     else
         resp = 'NR';
         RT = 0;
     end
-
     
 %     if (strcmp(keyname,'v'))  % Designation as old
 %         resp = 1;
@@ -276,13 +267,6 @@ for trial=1:ntrials
     end
     
     fprintf(fid,'%d\t%d\t%.1f\n',resp,acc,RT*1000);
-    if (strcmp(keyname,'ESCAPE'))
-        break;
-    end % ESC hit
-    if (RT)
-        WaitUntil(t_start + duration);
-    end % If response made, wait until end of trial.  (on timeout, already there)
-    Screen(window,'Flip');  % Clear screen (from already whiteened OSB)
     WaitUntil (t_start + trial_duration); 
 end
 
