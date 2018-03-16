@@ -71,17 +71,16 @@ end
 img = imread(fname);
 
 % Wait for user to hit a key
-Screen(window,'FillRect',WhiteIndex(window)); % clear to black
+Screen(window,'FillRect',WhiteIndex(window)); % clear to blanck
 DrawFormattedText(window,'Press (v) for old, (b) for similar and (n) for new.\n\nPress spacebar when you are ready to begin.','center','center',BlackIndex(window));
 Screen(window,'Flip');  % put offscreen buffer onto screen
-% KbWait;
 waitforbuttonpress = 0;
 
 while ~waitforbuttonpress
     evt = CedrusResponseBox('GetButtons', handle);
     if ~isempty(evt) && ((evt.button == 2) || (evt.button == 3) ||  (evt.button == 4) || (evt.button == 5)  )
         waitforbuttonpress = 1;
-        Screen('Flip',w);
+%         Screen('Flip',w);
     end
     waitsecs(0.1);
 end
@@ -140,8 +139,8 @@ for trial=1:ntrials
         evt = CedrusResponseBox('GetButtons', handle);
         currenttime = GetSecs;
 %         [~,~,keyname] = PsychHID('KbCheck');
-        [~,~,keyname] = KbCheck();
-        if strcmp(keyname,'ESCAPE')
+       [~,~,keyname] = KbCheck();
+        if keyname(10) == 1
             break;
         end
     end
@@ -265,7 +264,7 @@ for trial=1:ntrials
     end
     
     fprintf(fid,'%d\t%d\t%.1f\n',resp,acc,RT*1000);
-    if (RT)
+    if RT
         WaitUntil(t_start + duration);
     end % If response made, wait until end of trial.  (on timeout, already there)
     Screen(window,'Flip');  % Clear screen (from already whiteened OSB)

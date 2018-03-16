@@ -82,7 +82,7 @@ while ~waitforbuttonpress
     evt = CedrusResponseBox('GetButtons', handle);
     if ~isempty(evt) && ((evt.button == 2) || (evt.button == 3) ||  (evt.button == 4) || (evt.button == 5)  )
         waitforbuttonpress = 1;
-        Screen('Flip',w);
+%         Screen('Flip',w);
     end
     waitsecs(0.1);
 end

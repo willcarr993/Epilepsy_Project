@@ -1,0 +1,4 @@
+15-Mar-2018 16:26:34
+Test phase (group: 3)
+Subj: 3
+Trialnum	filename	condition	LureBin	response	accuracy	rt
