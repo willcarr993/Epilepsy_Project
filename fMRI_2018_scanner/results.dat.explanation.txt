@@ -1,0 +1,3 @@
+Subject #  |  Script #  |  Script Condition  |  Onset Pitch Msg  |  Onset Pitch (IGNORE)  |  Onset Verification Msg  | Onset Verification (IGNORE) |  Onset Pic Msg  |  Onset Pic (IGNORE) | Key Press Pitch (IGNORE) |  Key Press Pic (IGNORE) |  Response Pitch  |  Response Pic
+
+Columns to keep for analysis = 1, 2, 3, 4, 6, 8, 12, 13

@@ -1,0 +1,50 @@
+17-Apr-2018 15:21:40
+Test phase (group: 6)
+Subj: 6
+Trialnum	filename	condition	LureBin	response	accuracy	rt
+Scanner Trigger Time = 1672.451	Test Start Time = 1672.451
+1	Set D/074a.jpg	210	0	4	1	 929
+2	Set D/055a.jpg	455	0	4	1	 994
+3	Set D/132a.jpg	4	0	4	1	1132
+4	Set D/132a.jpg	104	0	1	1	1017
+Baseline	0.300	0.200	0	 120
+6	Set D/067a.jpg	203	0	0	0	 161
+7	Set D/063a.jpg	463	0	0	0	 200
+Baseline	0.300	0.200	0	 243
+9	Set D/146a.jpg	18	0	0	0	 280
+10	Set D/046a.jpg	446	0	0	0	 319
+11	Set D/070a.jpg	206	0	0	0	 362
+Baseline	0.300	0.200	0	 403
+13	Set D/149a.jpg	21	0	0	0	 438
+14	Set D/086a.jpg	222	0	0	0	 480
+15	Set D/009a.jpg	409	0	0	0	 520
+16	Set D/149a.jpg	121	0	0	0	 561
+17	Set D/068a.jpg	204	0	0	0	 601
+Baseline	0.300	0.200	0	 634
+19	Set D/135a.jpg	7	0	0	0	 680
+20	Set D/072a.jpg	208	0	0	0	 721
+21	Set D/020a.jpg	420	0	0	0	 755
+Baseline	0.300	0.200	0	 796
+23	Set D/135a.jpg	107	0	0	0	 833
+24	Set D/137a.jpg	9	0	0	0	 878
+25	Set D/139a.jpg	11	0	0	0	 914
+26	Set D/027a.jpg	427	0	0	0	 950
+Baseline	0.300	0.200	0	 997
+28	Set D/146a.jpg	118	0	0	0	1032
+29	Set D/007a.jpg	407	0	0	0	1075
+Baseline	0.300	0.200	0	1114
+31	Set D/083a.jpg	219	0	0	0	1151
+32	Set D/070b.jpg	306	5	0	0	1193
+33	Set D/015a.jpg	415	0	0	0	1231
+34	Set D/084a.jpg	220	0	0	0	1272
+35	Set D/074b.jpg	310	3	0	0	1312
+36	Set D/137a.jpg	109	0	1	1	1286
+37	Set D/145a.jpg	17	0	4	1	1092
+Baseline	0.300	0.200	1	1059
+39	Set D/010a.jpg	410	0	0	0	1470
+40	Set D/159a.jpg	31	0	4	1	1285
+Baseline	0.300	0.200	1	 928
+42	Set D/091a.jpg	227	0	4	1	1559
+43	Set D/085a.jpg	221	0	4	1	1190
+44	Set D/017a.jpg	417	0	4	1	1297
+Baseline	

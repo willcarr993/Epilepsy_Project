@@ -1,0 +1,11 @@
+12-Apr-2018 13:29:13
+Test phase (group: 1)
+Subj: 1
+Trialnum	filename	condition	LureBin	response	accuracy	rt
+Scanner Trigger Time = 9500.570	Test Start Time = 9500.570
+1	Set C/163a.jpg	435	0	1	0	1260
+2	Set C/079a.jpg	215	0	4	1	 588
+3	Set C/015a.jpg	15	0	4	1	 711
+4	Set C/085a.jpg	221	0	1	0	 699
+5	Set C/074a.jpg	210	0	0	0	 665
+Baseline	

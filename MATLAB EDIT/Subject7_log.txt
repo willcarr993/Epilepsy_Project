@@ -1,0 +1,131 @@
+20-Apr-2018 14:58:24
+Test phase (group: 1)
+Subj: 7
+Trialnum	filename	condition	LureBin	response	accuracy	rt
+Scanner Trigger Time = 21222.407	Test Start Time = 21222.408
+1	Set C/016a.jpg	16	0	0	0	1577
+2	Set C/023a.jpg	23	0	4	1	 930
+3	Set C/067a.jpg	203	0	4	1	 684
+4	Set C/173a.jpg	445	0	0	0	1696
+5	Set C/025a.jpg	25	0	0	0	 124
+Baseline	0.300	0.200	0	 163
+7	Set C/081a.jpg	217	0	0	0	 200
+8	Set C/157a.jpg	429	0	0	0	 238
+9	Set C/094a.jpg	230	0	0	0	 284
+10	Set C/094b.jpg	330	3	0	0	 316
+11	Set C/085a.jpg	221	0	0	0	 360
+Baseline	0.300	0.200	0	 397
+13	Set C/165a.jpg	437	0	0	0	 441
+Baseline	0.300	0.200	0	 479
+15	Set C/071a.jpg	207	0	0	0	 514
+16	Set C/136a.jpg	408	0	0	0	 557
+17	Set C/073a.jpg	209	0	0	0	 597
+Baseline	0.300	0.200	0	 639
+19	Set C/028a.jpg	28	0	0	0	 679
+20	Set C/004a.jpg	4	0	0	0	 714
+21	Set C/141a.jpg	413	0	0	0	 756
+Baseline	0.300	0.200	0	 794
+23	Set C/145a.jpg	417	0	4	1	 828
+24	Set C/008a.jpg	8	0	1	0	 802
+Baseline	0.300	0.200	1	 888
+26	Set C/016a.jpg	116	0	4	0	 936
+27	Set C/014a.jpg	14	0	0	0	 995
+28	Set C/011a.jpg	11	0	4	1	 602
+29	Set C/072a.jpg	208	0	4	1	 990
+30	Set C/072b.jpg	308	5	4	1	 770
+31	Set C/076a.jpg	212	0	4	1	 877
+32	Set C/004a.jpg	104	0	4	0	 606
+33	Set C/185a.jpg	457	0	4	1	 748
+Baseline	0.300	0.200	1	 845
+35	Set C/085b.jpg	321	2	1	0	 578
+36	Set C/003a.jpg	3	0	1	0	 683
+37	Set C/020a.jpg	20	0	4	1	 776
+38	Set C/130a.jpg	402	0	1	0	 708
+39	Set C/079a.jpg	215	0	4	1	1253
+40	Set C/066a.jpg	202	0	1	0	1461
+41	Set C/090a.jpg	226	0	1	0	 868
+Baseline	0.300	0.200	1	 961
+43	Set C/144a.jpg	416	0	4	1	 951
+44	Set C/003a.jpg	103	0	1	1	 539
+Baseline	0.300	0.200	0	  97
+46	Set C/075a.jpg	211	0	0	0	 132
+47	Set C/073b.jpg	309	4	0	0	 171
+48	Set C/143a.jpg	415	0	0	0	 214
+49	Set C/011a.jpg	111	0	0	0	 252
+50	Set C/025a.jpg	125	0	0	0	 294
+51	Set C/028a.jpg	128	0	0	0	 329
+52	Set C/021a.jpg	21	0	0	0	 372
+53	Set C/001a.jpg	1	0	0	0	 413
+54	Set C/080a.jpg	216	0	0	0	 451
+55	Set C/019a.jpg	19	0	0	0	 493
+56	Set C/076b.jpg	312	3	0	0	 531
+57	Set C/001a.jpg	101	0	0	0	 567
+58	Set C/081b.jpg	317	1	0	0	 611
+59	Set C/017a.jpg	17	0	0	0	 649
+Baseline	0.300	0.200	0	 687
+61	Set C/006a.jpg	6	0	0	0	 734
+62	Set C/166a.jpg	438	0	0	0	 768
+63	Set C/078a.jpg	214	0	0	0	 809
+Baseline	0.330	0.200	1	 690
+65	Set C/010a.jpg	10	0	0	0	 884
+66	Set C/079b.jpg	315	4	4	1	 726
+67	Set C/096a.jpg	232	0	0	0	 969
+68	Set C/174a.jpg	446	0	4	1	 995
+Baseline	0.363	0.200	1	 821
+70	Set C/026a.jpg	26	0	4	1	 973
+71	Set C/026a.jpg	126	0	4	0	 588
+72	Set C/067b.jpg	303	4	4	1	 872
+73	Set C/024a.jpg	24	0	4	1	1023
+74	Set C/078b.jpg	314	3	4	1	 611
+75	Set C/017a.jpg	117	0	4	0	 600
+76	Set C/147a.jpg	419	0	4	1	 765
+Baseline	0.363	0.200	1	 768
+78	Set C/008a.jpg	108	0	1	1	 637
+79	Set C/138a.jpg	410	0	4	1	1145
+80	Set C/066b.jpg	302	1	4	1	1330
+81	Set C/082a.jpg	218	0	4	1	1269
+Baseline	0.363	0.200	1	 679
+83	Set C/023a.jpg	123	0	4	0	 679
+84	Set C/071b.jpg	307	3	4	1	 587
+85	Set C/077a.jpg	213	0	4	1	 799
+86	Set C/013a.jpg	13	0	0	0	 105
+87	Set C/014a.jpg	114	0	0	0	 148
+88	Set C/027a.jpg	27	0	0	0	 187
+89	Set C/134a.jpg	406	0	0	0	 226
+Baseline	0.363	0.200	0	 261
+91	Set C/021a.jpg	121	0	0	0	 304
+92	Set C/140a.jpg	412	0	0	0	 342
+Baseline	0.363	0.200	0	 383
+94	Set C/080b.jpg	316	5	0	0	 423
+95	Set C/191a.jpg	463	0	0	0	 463
+96	Set C/019a.jpg	119	0	0	0	 501
+97	Set C/020a.jpg	120	0	0	0	 540
+98	Set C/032a.jpg	32	0	0	0	 585
+99	Set C/082b.jpg	318	3	0	0	 620
+100	Set C/005a.jpg	5	0	0	0	 661
+101	Set C/031a.jpg	31	0	0	0	 702
+102	Set C/031a.jpg	131	0	4	0	 606
+103	Set C/030a.jpg	30	0	0	0	 782
+104	Set C/096b.jpg	332	1	1	0	 606
+105	Set C/090b.jpg	326	1	1	0	 560
+106	Set C/024a.jpg	124	0	4	0	 716
+Baseline	0.363	0.200	1	 722
+108	Set C/186a.jpg	458	0	4	1	 931
+109	Set C/027a.jpg	127	0	4	0	 632
+110	Set C/006a.jpg	106	0	4	0	 832
+111	Set C/075b.jpg	311	1	1	0	 793
+Baseline	0.363	0.200	1	 755
+113	Set C/169a.jpg	441	0	4	1	1019
+Baseline	0.363	0.200	1	 716
+115	Set C/164a.jpg	436	0	4	1	1239
+116	Set C/068a.jpg	204	0	0	0	1292
+117	Set C/010a.jpg	110	0	4	0	 785
+118	Set C/013a.jpg	113	0	4	0	 575
+119	Set C/005a.jpg	105	0	4	0	 689
+120	Set C/007a.jpg	7	0	4	1	1337
+121	Set C/095a.jpg	231	0	0	0	1496
+Baseline	0.363	0.200	1	 784
+123	Set C/089a.jpg	225	0	4	1	1055
+124	Set C/086a.jpg	222	0	1	0	1023
+125	Set C/009a.jpg	9	0	1	0	1171
+126	Set C/032a.jpg	132	0	

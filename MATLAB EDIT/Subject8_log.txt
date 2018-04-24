@@ -1,0 +1,243 @@
+20-Apr-2018 15:14:18
+Test phase (group: 2)
+Subj: 8
+Trialnum	filename	condition	LureBin	response	accuracy	rt
+Scanner Trigger Time = 22126.620	Test Start Time = 22126.621
+1	Set D/096a.jpg	32	0	4	1	   0
+2	Set D/178a.jpg	450	0	4	1	   0
+Baseline	0.300	0.200	1	   0
+4	Set D/129a.jpg	401	0	4	1	   0
+Baseline	0.300	0.200	0	   0
+6	Set D/130a.jpg	402	0	0	0	   0
+Baseline	0.300	0.200	0	   0
+8	Set D/016a.jpg	216	0	0	0	   0
+9	Set D/161a.jpg	433	0	0	0	   0
+10	Set D/096a.jpg	132	0	0	0	   0
+11	Set D/028a.jpg	228	0	0	0	   0
+12	Set D/075a.jpg	11	0	0	0	   0
+Baseline	0.300	0.200	0	   0
+14	Set D/191a.jpg	463	0	0	0	   0
+15	Set D/025a.jpg	225	0	0	0	   0
+Baseline	0.300	0.200	0	   0
+17	Set D/133a.jpg	405	0	0	0	   0
+18	Set D/030a.jpg	230	0	4	1	   0
+19	Set D/080a.jpg	16	0	4	1	   0
+Baseline	0.300	0.200	0	   0
+21	Set D/181a.jpg	453	0	4	1	   0
+Baseline	0.300	0.200	1	   0
+23	Set D/075a.jpg	111	0	0	0	   0
+24	Set D/171a.jpg	443	0	4	1	   0
+Baseline	0.300	0.200	1	   0
+26	Set D/160a.jpg	432	0	1	0	   0
+27	Set D/005a.jpg	205	0	4	1	   0
+28	Set D/028b.jpg	328	3	0	0	   0
+29	Set D/090a.jpg	26	0	4	1	   0
+Baseline	0.300	0.200	1	   0
+31	Set D/023a.jpg	223	0	4	1	   0
+32	Set D/025b.jpg	325	4	4	1	   0
+33	Set D/078a.jpg	14	0	4	1	   0
+34	Set D/085a.jpg	21	0	4	1	   0
+35	Set D/184a.jpg	456	0	4	1	   0
+36	Set D/085a.jpg	121	0	1	1	   0
+Baseline	0.300	0.200	1	   0
+38	Set D/021a.jpg	221	0	4	1	   0
+39	Set D/132a.jpg	404	0	4	1	   0
+Baseline	0.300	0.200	1	   0
+41	Set D/017a.jpg	217	0	4	1	   0
+42	Set D/177a.jpg	449	0	4	1	   0
+Baseline	0.300	0.200	1	   0
+44	Set D/019a.jpg	219	0	4	1	   0
+45	Set D/021b.jpg	321	3	0	0	   0
+46	Set D/087a.jpg	23	0	0	0	   0
+47	Set D/006a.jpg	206	0	0	0	   0
+48	Set D/009a.jpg	209	0	0	0	   0
+49	Set D/065a.jpg	1	0	0	0	   0
+50	Set D/148a.jpg	420	0	0	0	   0
+51	Set D/078a.jpg	114	0	0	0	   0
+Baseline	0.300	0.200	0	   0
+53	Set D/073a.jpg	9	0	0	0	   0
+54	Set D/024a.jpg	224	0	0	0	   0
+55	Set D/176a.jpg	448	0	0	0	   0
+56	Set D/030b.jpg	330	4	0	0	   0
+57	Set D/087a.jpg	123	0	0	0	   0
+58	Set D/016b.jpg	316	2	0	0	   0
+Baseline	0.300	0.200	0	   0
+60	Set D/029a.jpg	229	0	4	1	   0
+61	Set D/080a.jpg	116	0	1	1	   0
+62	Set D/023b.jpg	323	5	4	1	   0
+63	Set D/095a.jpg	31	0	4	1	   0
+64	Set D/190a.jpg	462	0	4	1	   0
+65	Set D/017b.jpg	317	5	1	0	   0
+Baseline	0.300	0.200	1	   0
+67	Set D/084a.jpg	20	0	4	1	   0
+68	Set D/090a.jpg	126	0	1	1	   0
+69	Set D/022a.jpg	222	0	4	1	   0
+70	Set D/152a.jpg	424	0	4	1	   0
+71	Set D/076a.jpg	12	0	4	1	   0
+72	Set D/067a.jpg	3	0	4	1	   0
+73	Set D/067a.jpg	103	0	1	1	   0
+Baseline	0.300	0.200	1	   0
+75	Set D/092a.jpg	28	0	4	1	   0
+76	Set D/069a.jpg	5	0	4	1	   0
+77	Set D/031a.jpg	231	0	4	1	   0
+78	Set D/134a.jpg	406	0	4	1	   0
+Baseline	0.270	0.200	1	   0
+80	Set D/009b.jpg	309	2	1	0	   0
+81	Set D/012a.jpg	212	0	4	1	   0
+82	Set D/018a.jpg	218	0	4	1	   0
+83	Set D/083a.jpg	19	0	4	1	   0
+84	Set D/012b.jpg	312	1	1	0	   0
+85	Set D/006b.jpg	306	4	4	1	   0
+86	Set D/014a.jpg	214	0	0	0	   0
+87	Set D/022b.jpg	322	4	0	0	   0
+88	Set D/026a.jpg	226	0	0	0	   0
+89	Set D/186a.jpg	458	0	0	0	   0
+90	Set D/027a.jpg	227	0	0	0	   0
+91	Set D/076a.jpg	112	0	0	0	   0
+Baseline	0.243	0.200	0	   0
+93	Set D/065a.jpg	101	0	0	0	   0
+94	Set D/029b.jpg	329	4	0	0	   0
+95	Set D/069a.jpg	105	0	0	0	   0
+96	Set D/032a.jpg	232	0	0	0	   0
+97	Set D/091a.jpg	27	0	0	0	   0
+98	Set D/135a.jpg	407	0	0	0	   0
+Baseline	0.243	0.200	0	   0
+100	Set D/189a.jpg	461	0	0	0	   0
+101	Set D/024b.jpg	324	5	0	0	   0
+102	Set D/084a.jpg	120	0	0	0	   0
+103	Set D/019b.jpg	319	3	1	0	   0
+104	Set D/079a.jpg	15	0	4	1	   0
+105	Set D/007a.jpg	207	0	4	1	   0
+Baseline	0.243	0.200	1	   0
+107	Set D/156a.jpg	428	0	4	1	   0
+108	Set D/005b.jpg	305	1	4	1	   0
+109	Set D/081a.jpg	17	0	4	1	   0
+110	Set D/079a.jpg	115	0	1	1	   0
+111	Set D/083a.jpg	119	0	1	1	   0
+Baseline	0.243	0.200	1	   0
+113	Set D/073a.jpg	109	0	1	1	   0
+114	Set D/082a.jpg	18	0	4	1	   0
+115	Set D/082a.jpg	118	0	1	1	   0
+116	Set D/031b.jpg	331	2	1	0	   0
+117	Set D/018b.jpg	318	4	1	0	   0
+118	Set D/172a.jpg	444	0	4	1	   0
+119	Set D/004a.jpg	204	0	4	1	   0
+120	Set D/088a.jpg	24	0	4	1	   0
+121	Set D/072a.jpg	8	0	4	1	   0
+122	Set D/089a.jpg	25	0	4	1	   0
+Baseline	0.243	0.200	1	   0
+124	Set D/095a.jpg	131	0	1	1	   0
+125	Set D/074a.jpg	10	0	4	1	   0
+126	Set D/092a.jpg	128	0	1	1	   0
+127	Set D/013a.jpg	213	0	0	0	   0
+128	Set D/144a.jpg	416	0	0	0	   0
+Baseline	0.243	0.200	0	   0
+130	Set D/154a.jpg	426	0	0	0	   0
+131	Set D/068a.jpg	4	0	0	0	   0
+132	Set D/004b.jpg	304	2	0	0	   0
+133	Set D/068a.jpg	104	0	0	0	   0
+134	Set D/026b.jpg	326	2	0	0	   0
+135	Set D/015a.jpg	215	0	0	0	   0
+136	Set D/070a.jpg	6	0	0	0	   0
+137	Set D/013b.jpg	313	3	0	0	   0
+138	Set D/027b.jpg	327	5	0	0	   0
+Baseline	0.243	0.200	0	   0
+140	Set D/158a.jpg	430	0	0	0	   0
+141	Set D/032b.jpg	332	3	1	0	   0
+142	Set D/001a.jpg	201	0	4	1	   0
+143	Set D/094a.jpg	30	0	4	1	   0
+144	Set D/007b.jpg	307	4	0	0	   0
+Baseline	0.243	0.200	1	   0
+146	Set D/071a.jpg	7	0	4	1	   0
+147	Set D/074a.jpg	110	0	1	1	   0
+148	Set D/159a.jpg	431	0	4	1	   0
+Baseline	0.243	0.200	0	   0
+150	Set D/151a.jpg	423	0	4	1	   0
+Baseline	0.243	0.200	0	   0
+152	Set D/089a.jpg	125	0	1	1	   0
+153	Set D/143a.jpg	415	0	4	1	   0
+Baseline	0.267	0.200	1	   0
+155	Set D/169a.jpg	441	0	4	1	   0
+Baseline	0.267	0.200	1	   0
+157	Set D/003a.jpg	203	0	4	1	   0
+158	Set D/077a.jpg	13	0	4	1	   0
+159	Set D/086a.jpg	22	0	4	1	   0
+160	Set D/014b.jpg	314	5	4	1	   0
+161	Set D/180a.jpg	452	0	4	1	   0
+162	Set D/011a.jpg	211	0	4	1	   0
+163	Set D/008a.jpg	208	0	4	1	   0
+164	Set D/066a.jpg	2	0	4	1	   0
+165	Set D/091a.jpg	127	0	1	1	   0
+166	Set D/010a.jpg	210	0	4	1	   0
+167	Set D/094a.jpg	130	0	0	0	   0
+168	Set D/002a.jpg	202	0	0	0	   0
+169	Set D/020a.jpg	220	0	0	0	   0
+170	Set D/071a.jpg	107	0	0	0	   0
+171	Set D/003b.jpg	303	2	0	0	   0
+172	Set D/077a.jpg	113	0	0	0	   0
+173	Set D/093a.jpg	29	0	0	0	   0
+174	Set D/070a.jpg	106	0	0	0	   0
+Baseline	0.267	0.200	0	   0
+176	Set D/015b.jpg	315	1	0	0	   0
+177	Set D/081a.jpg	117	0	0	0	   0
+178	Set D/173a.jpg	445	0	0	0	   0
+Baseline	0.267	0.200	0	   0
+180	Set D/072a.jpg	108	0	0	0	   0
+181	Set D/011b.jpg	311	2	0	0	   0
+182	Set D/010b.jpg	310	1	1	0	   0
+183	Set D/179a.jpg	451	0	0	0	   0
+184	Set D/093a.jpg	129	0	1	1	   0
+185	Set D/001b.jpg	301	2	1	0	   0
+186	Set D/088a.jpg	124	0	1	1	   0
+187	Set D/008b.jpg	308	2	0	0	   0
+188	Set D/002b.jpg	302	2	0	0	   0
+Baseline	0.294	0.200	1	   0
+190	Set D/020b.jpg	320	1	1	0	   0
+191	Set D/066a.jpg	102	0	1	1	   0
+192	Set D/086a.jpg	122	0	1	1	   0
+
+Session Statistics
+TO	TN	LO	LN	FO	FN	NR	VB
+17	0	10	5	1	59	68	0	
+Total target trials	32
+Rate(old | target)	0.5313
+Rate(new | target)	0.0000
+
+Total lure trials	32
+Rate(old | lure)	0.3125
+Rate(new | lure)	0.1563
+
+Total foil trials	96
+Rate(old | foil)	0.0104
+Rate(new | foil)	0.6146
+
+No Response Rate	0.4250
+Void Button Press Rate	0.0000
+
+LureBin Statistics
+L1O	L1N	L1NR	L2O	L2N	L2NR	L3O	L3N	L3NR	L4O	L4N	L4NR	L5O	L5N	5LNR
+3	1	1	3	0	7	2	0	3	1	2	4	1	2	2	
+Total LureBin one trials	5
+Rate(old | lure1)	0.6000
+Rate(new | lure1)	0.2000
+Rate(NR | lure1)	0.2000
+
+Total LureBin two trials	10
+Rate(old | lure2)	0.3000
+Rate(new | lure2)	0.0000
+Rate(NR | lure2)	0.7000
+
+Total LureBin three trials	5
+Rate(old | lure3)	0.4000
+Rate(new | lure3)	0.0000
+Rate(NR | lure3)	0.6000
+
+Total LureBin four trials	7
+Rate(old | lure4)	0.1429
+Rate(new | lure4)	0.2857
+Rate(NR | lure4)	0.5714
+
+Total LureBin five trials	5
+Rate(old | lure5)	0.2000
+Rate(new | lure5)	0.4000
+Rate(NR | lure5)	0.4000
